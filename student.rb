@@ -15,38 +15,34 @@ def result(student,name)
 end
 end  
 
-def percentage(student,name)
+def percentage(student)
   student.each do |s|
-    if s["name"]=name
        p="#{s["marks"]}%"
        s["percentage"]=p
     end
-  end
 end  
 
-def grade(student,name)
-  student.each do |s|
-    if  s["name"]=name
-    case s["marks"]
+def grade(student,n)
+  i= student.find{|x| x["name"]==n}
+    case i["marks"]
     when 40..59
-      s[:grade]="c"
+      i[:grade]="c"
     when 60..79
-      s[:grade]="b"  
+      i[:grade]="b"  
     when 80..101
-      s[:grade]="a"
+      i[:grade]="a"
     else
-      s[:grade]="f"   
-    end
-    end 
+      i[:grade]="f"   
   end 
 end  
 student=[{"name"=>"kalyan","rolno"=>1,"marks"=>90},
 {"name"=>"hhh","rolno"=>2,"marks"=>30},{"name"=>"mac","rolno"=>3,"marks"=>45}]
 puts result(student,"kalyan")
 puts student
-puts "before"
-percentage(student,"kalyan")
+puts "percentage"
+percentage(student)
 puts student
+puts "grade of kalyan "
 grade(student,"kalyan")
 puts student
 
