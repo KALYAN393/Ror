@@ -1,9 +1,9 @@
-def m(a)
+def m()
   puts "before multiplying"
-  yield(a)
+  yield(3)
   puts "after multiplying"
 end
-a=3
-m(a){|b| puts b*b}
+
+m{|b| puts b*b}
 
 
