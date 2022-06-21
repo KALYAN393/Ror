@@ -1,12 +1,9 @@
 module Badword
-  def is_bad?(para)
+  def is_bad(b)
   a=["bad","verybad","veryverybad","ugly"]
-  p=para.split(" ")
-  if p&a
-    return true
-  else
-    return false
-  end
-  end
+  p=b.split(" ")
 
+  (p&a).length>0
+   
+  end
 end
