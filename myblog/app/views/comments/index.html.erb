@@ -1,0 +1,12 @@
+<h1>Showing comment details</h1>
+
+<p><strong>Post: </strong><%= @post.body %></p>
+<p><strong>Comment:</strong></p>
+<p><% @comments.each do |item| %></p>
+<p><strong><%= item.description%>
+  
+<p><% end %></p>
+
+
+
+
